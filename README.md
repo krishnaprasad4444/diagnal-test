@@ -31,7 +31,7 @@ The build is minified and the filenames include the hashes.\
 Builds and deploys the app for production to the github pages.\
 If you want to change the app url, change the 'homepage' value in package.json file and run the command.
 
-All the deploy process are automatic.\
+All the deployment process are automatic.\
 
 ### `npm run eject`
 
