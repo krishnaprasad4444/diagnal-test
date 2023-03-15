@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { MovieList } from "../../containers";
@@ -17,19 +17,18 @@ export const CategorizedMovies = () => {
     if (currentPage < 4) dispatch(api.getMovies(currentPage));
   };
 
-  const onSearch = (e) => {
+  const onSearch = useCallback((e) => {
     setSearchKey(e.target.value);
-  };
+  }, []);
 
-  const filteredData = useMemo(() =>
-    data.filter(
-      (movie) => {
+  const filteredData = useMemo(
+    () =>
+      data.filter((movie) => {
         return movie?.name
           .toLowerCase()
           .includes(searchKey.toLocaleLowerCase());
-      },
-      [data, searchKey]
-    )
+      }),
+    [data, searchKey]
   );
 
   return (

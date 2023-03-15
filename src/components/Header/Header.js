@@ -1,3 +1,4 @@
+import { memo } from "react";
 import BackBtnIcon from "../../assets/images/back-arrow.png";
 import { SearchBox } from "../";
 
@@ -24,4 +25,4 @@ const Header = ({ title, onSearch }) => {
   );
 };
 
-export default Header;
+export default memo(Header);

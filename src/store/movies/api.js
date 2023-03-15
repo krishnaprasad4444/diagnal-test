@@ -1,6 +1,6 @@
 import { actions } from "./";
 
-export default {
+const apis = {
   getMovies: (currentPage) => async (dispatch) => {
     dispatch(actions.getMoviesRequest());
     try {
@@ -13,3 +13,5 @@ export default {
     }
   },
 };
+
+export default apis;
